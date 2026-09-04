@@ -1,0 +1,25 @@
+    1  mkdir command-line shell-scripts c-programs
+    2  ls
+    3  cd command-line
+    4  mkdir command-line-easy && cd command-line-easy
+    5  pwd
+    6  cd command-line
+    7  mkdir command-line-easy && cd command-line-easy
+    8  pwd
+    9  cd ..
+   10  rmdir command-line-easy
+   11  touch hello.txt
+   12  ls
+   13  nano hello.txt
+   14  cat hello.txt
+   15  cp hello.txt hello-copy.txt
+   16  ls
+   17  mv hello-copy.txt ../
+   18  ls
+   19  rm hello.txt
+   20  ls
+   21  cat ../hello-copy.txt
+   22  man ls
+   23  echo "Test" > test.txt
+   24  cat test.txt
+   25  history | tail -25 > easy-log.txt
