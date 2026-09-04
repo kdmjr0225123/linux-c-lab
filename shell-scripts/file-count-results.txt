@@ -1,0 +1,4 @@
+File counts by extension in ../command-line:
+txt: 7
+sh: 0
+c: 0
