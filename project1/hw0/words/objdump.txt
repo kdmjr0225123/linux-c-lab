@@ -1,0 +1,36 @@
+Q: What file format is used for this binary? And what architecture is it
+   compiled for?
+A: The file format is elf64-x86-64 (a 64-bit ELF executable). The
+   architecture is i386:x86-64, meaning it's a standard 64-bit x86 binary.
+   The binary is also flagged as DYNAMIC (it's a Position Independent
+   Executable / PIE, dynamically linked against libc rather than statically
+   linked).
+
+Q: What are some of the names of segment/sections you find?
+A: Some of the sections present: .interp, .note.gnu.property,
+   .note.gnu.build-id, .gnu.hash, .dynsym, .dynstr, .gnu.version, .rela.dyn,
+   .text, .data, .bss, along with others related to dynamic linking (.plt,
+   .got, .dynamic) and debug info (since compiled with -g).
+
+Q: What segment/section contains main (the function) and what is the
+   address of main? (It should be the same as what you saw in gdb)
+A: main is located in the .text section, at file address 0x13a0. The .text
+   section spans 0x1110 to roughly 0x189c, so 0x13a0 falls within that range.
+   This matches what gdb showed at runtime (0x5555555553a0) -- the lower
+   digits (...53a0 vs ...13a0 -- note the offset difference is due to how
+   the loader maps the file into memory) correspond to the same function;
+   the difference in the high-order bits comes from ASLR randomizing the
+   base load address of the PIE binary at runtime, while objdump shows the
+   static, un-relocated file offset.
+
+Q: Do you see the stack segment anywhere? What about the heap? Explain.
+A: No, neither the stack nor the heap appear as sections in the objdump
+   output. That's because .text, .data, .bss, etc. are static regions
+   defined in the compiled binary file itself (they exist before the
+   program even runs). The stack and heap, by contrast, are dynamically
+   created and managed by the operating system at runtime -- the stack is
+   set up by the kernel when the process starts (and grows/shrinks as
+   functions are called), and the heap is dynamically grown via brk/mmap
+   system calls triggered by malloc(). Since they don't exist until runtime
+   and aren't part of the file's static layout, they have no entry in the
+   ELF section table.

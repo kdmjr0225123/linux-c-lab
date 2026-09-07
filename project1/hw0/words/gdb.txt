@@ -1,0 +1,39 @@
+Q: What is the value of argv? (hint: print argv)
+A: argv = 0x7fffffffd258, a pointer to an array of char* (char **). This is the
+   address on the stack where the array of argument string pointers begins.
+
+Q: What is pointed to by argv? (hint: print argv[0])
+A: argv[0] = "/workspaces/linux-c-lab/project1/hw0/words/words", a string
+   containing the path used to invoke the program. argv[0] is always the
+   program's own name/path, and here argc=2, so argv[1] holds the second
+   argument ("main.c").
+
+Q: What is the address of the function main?
+A: main is located at 0x5555555553a0. Because the binary was compiled as a
+   Position Independent Executable (PIE), this is a runtime address after
+   ASLR (Address Space Layout Randomization) has relocated the binary; the
+   address will differ between runs. The address shown by `info registers`
+   for rip (0x5555555553b3, main+19) confirms execution is currently inside
+   main, just past its prologue.
+
+Q: Try info stack. Explain what you see.
+A: info stack (equivalent to backtrace here) shows a single frame:
+   #0  main (argc=2, argv=0x7fffffffd258) at main.c:116
+   Since we stopped at the very first breakpoint inside main, there is only
+   one frame on the call stack -- main hasn't called any other function yet,
+   so there's nothing beneath it except the C runtime startup code, which
+   isn't shown by default.
+
+Q: Try info registers. Which registers are holding aspects of the program
+   that you recognize?
+A: - rip (0x5555555553b3) = the instruction pointer, pointing just after
+     main's prologue (main+19), matching the address of main we printed.
+   - rsp (0x7fffffffd100) = the stack pointer, marking the top of the stack.
+   - rbp (0x7fffffffd130) = the base/frame pointer for main's stack frame.
+   - rdi (0x2) = holds argc (2), following the x86-64 System V calling
+     convention where the first integer argument is passed in rdi.
+   - rsi (0x7fffffffd258) = holds argv, matching the address printed by
+     `print argv` -- the second argument is passed in rsi.
+   - rax and rcx also happen to contain values close to main's own address
+     range, likely leftover from earlier setup/PLT resolution rather than
+     meaningful program state at this point.

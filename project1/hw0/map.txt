@@ -1,0 +1,61 @@
+Q: Use objdump with the -D flag on the map executable. Which of the
+   addresses from the output of running ./map are defined in the
+   executable, and which segment/section is each defined in?
+A: Two addresses are defined statically in the executable file:
+     - main is at file address 0x1189, in the .text section
+       (.text spans 0x10a0 to ~0x130f).
+     - recur is at file address 0x129e, also in .text.
+   These match the runtime addresses printed by ./map (_main @ ...52189,
+   recur @ ...5229e) -- same low-order digits, offset by the ASLR base the
+   loader chose at runtime.
+   The remaining addresses (_main stack, static data, both malloc'd heap
+   addresses, and each recur call's stack address) are NOT fixed in the
+   executable file -- they only exist once the program is actually running,
+   so objdump (which only inspects the static file) has no section entry
+   for them.
+
+Q: Make a list of the important segments, and what they are used for
+   (look up their names on the Internet if you don't know).
+A: - .text: holds the compiled machine code/instructions (main, recur, etc).
+   - .data: holds initialized global/static variables (e.g. `stuff = 7`).
+   - .bss: holds uninitialized (or zero-initialized) global/static
+     variables (e.g. `int foo;`) -- takes no space in the file itself,
+     just a size, since it's zero-filled at load time.
+   - Stack: not a file section -- a runtime memory region set up by the OS
+     for function calls, local variables, and return addresses. Grows and
+     shrinks automatically as functions are called/return.
+   - Heap: not a file section -- a runtime memory region used for dynamic
+     allocation (malloc/free), managed by the OS via brk/mmap.
+
+Q: What direction is the stack growing in?
+A: Downward (toward lower addresses). The recursive stack addresses were:
+     recur call 3: 0x7ffc65868bb4
+     recur call 2: 0x7ffc65868b84
+     recur call 1: 0x7ffc65868b54
+     recur call 0: 0x7ffc65868b24
+   Each subsequent (deeper) call has a smaller address, confirming the x86
+   stack grows from high addresses toward low addresses.
+
+Q: How large is the stack frame for each recursive call?
+A: Each call's local variable address decreases by 0x30 (48 bytes) from the
+   previous one (0x8bb4 -> 0x8b84 -> 0x8b54 -> 0x8b24), so each recursive
+   call's stack frame is 48 bytes.
+
+Q: Where is the heap? What direction is it growing in?
+A: The heap addresses returned by malloc were:
+     Heap: malloc 1: 0x59e3435a16b0
+     Heap: malloc 2: 0x59e3435a1720
+   This is a completely separate memory region from both the stack
+   (0x7ffc...) and the code/static data (0x59e3149...) -- heap memory is
+   allocated by the OS in its own mapped region. Since malloc 2's address
+   (...1720) is higher than malloc 1's (...16b0), the heap is growing
+   upward (toward higher addresses) as more memory is allocated.
+
+Q: Are the two malloc()ed memory areas contiguous? (e.g. is there any
+   extra space between their addresses?)
+A: Not quite. malloc 1 is at 0x...16b0 and malloc 2 is at 0x...1720 -- a
+   difference of 0x70 (112 bytes). Each buf was requested as 100 bytes
+   (malloc(100)), so there are an extra 12 bytes between them. This is due
+   to malloc's internal chunk overhead/alignment (metadata header plus
+   padding to keep allocations aligned, typically to a 16-byte boundary) --
+   not truly contiguous, but very close.
