@@ -1,0 +1,6 @@
+CC=gcc
+CFLAGS=-Wall -Wextra
+PROGS=sig_ignore quit_prompt fopen_vs_open write_seek dup2_warmup redirect_exec redirect_fork
+all: $(PROGS)
+clean:
+	rm -f $(PROGS) *.txt
