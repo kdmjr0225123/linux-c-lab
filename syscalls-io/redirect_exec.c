@@ -1,11 +1,4 @@
-/*
- * 4.2.2 Redirection: executing a process after dup2
- * Prints: writing output of the command /bin/ls to "<file>"  (terminal)
- * Then dup2 points stdout at <file> and execvp replaces this process with
- * `ls -al /`. ls inherits fd 1, so its listing goes into <file>.
- * perror/exit only run if execvp fails.
- * (Fix from handout: O_CAT -> O_CREAT.)
- */
+/* 4.2.2 - redirect stdout then exec ls */
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,13 +12,13 @@ int main(int argc, char **argv) {
         exit(1);
     }
     if ((newfd = open(argv[1], O_CREAT | O_TRUNC | O_WRONLY, 0644)) < 0) {
-        perror(argv[1]);   /* open failed */
+        perror(argv[1]);
         exit(1);
     }
     printf("writing output of the command %s to \"%s\"\n", cmd[0], argv[1]);
-    fflush(stdout);        /* make sure the message is out before exec */
+    fflush(stdout);
     dup2(newfd, 1);
     execvp(cmd[0], cmd);
-    perror(cmd[0]);        /* execvp failed */
+    perror(cmd[0]);   /* execvp failed */
     exit(1);
 }

@@ -1,11 +1,4 @@
-/*
- * 4.2.1 Warmup - What does C print?
- * Terminal:        Luke, I am your...
- * output_file.txt: father
- * The first printf goes to the terminal (stdout is line-buffered on a tty,
- * so "\n" flushes it). dup2(newfd, 1) then makes fd 1 point to the file,
- * so "father" lands in output_file.txt.
- */
+/* 4.2.1 - dup2 warmup */
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>

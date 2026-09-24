@@ -1,10 +1,4 @@
-/*
- * 3.1.1 Did you really want to quit?
- * On Ctrl-C, ask "Do you really want to quit [y/n]? ".
- * 'y' -> exit, anything else -> keep running.
- * Uses only syscalls (write/read/_exit) inside the handler,
- * since printf/scanf are not async-signal-safe.
- */
+/* 3.1.1 - ask before quitting on Ctrl-C */
 #include <signal.h>
 #include <string.h>
 #include <unistd.h>
@@ -19,11 +13,11 @@ void handler(int signum) {
         write(STDOUT_FILENO, "Bye!\n", 5);
         _exit(0);
     }
-    /* discard rest of the line (e.g. the newline) */
+    /* clear rest of line */
     while (c != '\n' && read(STDIN_FILENO, &c, 1) == 1)
         ;
     write(STDOUT_FILENO, "Continuing...\n", 14);
-    signal(SIGINT, handler);          /* re-install (portable) */
+    signal(SIGINT, handler);
 }
 
 int main(void) {
@@ -31,6 +25,6 @@ int main(void) {
     const char *msg = "Running... press Ctrl-C to try to quit.\n";
     write(STDOUT_FILENO, msg, strlen(msg));
     while (1)
-        pause();                      /* sleep until a signal arrives */
+        pause();
     return 0;
 }

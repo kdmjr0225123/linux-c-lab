@@ -1,9 +1,4 @@
-/*
- * 4.2.3 Redirecting in a new process
- * The child redirects its stdout to the file and execs `ls -al /`.
- * The parent keeps its own stdout (terminal), waits for the child,
- * then prints "all done".
- */
+/* 4.2.3 - redirect in child, parent waits */
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,21 +14,21 @@ int main(int argc, char **argv) {
         exit(1);
     }
     if ((newfd = open(argv[1], O_CREAT | O_TRUNC | O_WRONLY, 0644)) < 0) {
-        perror(argv[1]);   /* open failed */
+        perror(argv[1]);
         exit(1);
     }
     printf("writing output of the command %s to \"%s\"\n", cmd[0], argv[1]);
-    fflush(stdout);        /* don't let the child inherit unflushed output */
+    fflush(stdout);
 
     if ((pid = fork()) < 0) {
         perror("fork");
         exit(1);
     }
-    if (pid == 0) {                   /* child */
+    if (pid == 0) {   /* child */
         dup2(newfd, 1);
         close(newfd);
         execvp(cmd[0], cmd);
-        perror(cmd[0]);               /* execvp failed */
+        perror(cmd[0]);
         exit(1);
     }
     /* parent */
