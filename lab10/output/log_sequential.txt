@@ -1,0 +1,1109 @@
+==================== FCFS | input/sequential.txt | TLB 4 | frames 8 ====================
+t=0000  P1 T1  W 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0
+t=0001  P1 T2  W 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 1  [THREAD SWITCH]
+t=0002  P1 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0003  P1 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0004  P1 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0005  P1 T2  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0006  P1 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0007  P1 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0008  P1 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 2  [THREAD SWITCH]
+t=0009  P1 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 3  [THREAD SWITCH]
+t=0010  P1 T1  R 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0011  P1 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0012  P1 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0013  P1 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0014  P1 T1  W 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0015  P1 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0016  P1 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 4  [THREAD SWITCH]
+t=0017  P1 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 5  [THREAD SWITCH]
+t=0018  P1 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0019  P1 T2  W 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0020  P1 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0021  P1 T2  R 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0022  P1 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0023  P1 T2  R 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0024  P1 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 6  [THREAD SWITCH]
+t=0025  P1 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 7  [THREAD SWITCH]
+t=0026  P1 T1  W 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0027  P1 T2  W 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0028  P1 T1  W 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0029  P1 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0030  P1 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0031  P1 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0032  P1 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 9 (clean)  [THREAD SWITCH]
+t=0033  P1 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 2 (dirty, written back)  [THREAD SWITCH]
+t=0034  P1 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0035  P1 T2  W 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0036  P1 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0037  P1 T2  W 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0038  P1 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0039  P1 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0040  P1 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0041  P1 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 3 (dirty, written back)  [THREAD SWITCH]
+t=0042  P1 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0043  P1 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0044  P1 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0045  P1 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0046  P1 T1  W 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0047  P1 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0048  P1 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0049  P1 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 0 (dirty, written back)  [THREAD SWITCH]
+t=0050  P1 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0051  P1 T2  W 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0052  P1 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0053  P1 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0054  P1 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0055  P1 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0056  P1 T1  W 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0057  P1 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 1 (dirty, written back)  [THREAD SWITCH]
+t=0058  P1 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0059  P1 T2  W 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0060  P1 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0061  P1 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0062  P1 T1  W 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0063  P1 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0064  P1 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 4 (dirty, written back)  [THREAD SWITCH]
+t=0065  P1 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 12 (dirty, written back)  [THREAD SWITCH]
+t=0066  P1 T1  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0067  P1 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0068  P1 T1  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0069  P1 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0070  P1 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0071  P1 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0072  P1 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 5 (dirty, written back)  [THREAD SWITCH]
+t=0073  P1 T2  W 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 13 (dirty, written back)  [THREAD SWITCH]
+t=0074  P1 T1  W 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0075  P1 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0076  P1 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0077  P1 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0078  P1 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0079  P1 T2  R 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0080  P2 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 6 (dirty, written back)  [CONTEXT SWITCH]
+t=0081  P2 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 14 (dirty, written back)  [THREAD SWITCH]
+t=0082  P2 T1  W 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0083  P2 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0084  P2 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0085  P2 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0086  P2 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0087  P2 T2  W 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0088  P2 T1  W 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 7 (dirty, written back)  [THREAD SWITCH]
+t=0089  P2 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 15 (dirty, written back)  [THREAD SWITCH]
+t=0090  P2 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0091  P2 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0092  P2 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0093  P2 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0094  P2 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0095  P2 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0096  P2 T1  R 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 16 (clean)  [THREAD SWITCH]
+t=0097  P2 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 9 (clean)  [THREAD SWITCH]
+t=0098  P2 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0099  P2 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0100  P2 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0101  P2 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0102  P2 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0103  P2 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0104  P2 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0105  P2 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 9 (dirty, written back)  [THREAD SWITCH]
+t=0106  P2 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0107  P2 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0108  P2 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0109  P2 T2  W 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0110  P2 T1  W 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0111  P2 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0112  P2 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 2 (clean)  [THREAD SWITCH]
+t=0113  P2 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 17 (dirty, written back)  [THREAD SWITCH]
+t=0114  P2 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0115  P2 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0116  P2 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0117  P2 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0118  P2 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0119  P2 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0120  P2 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 0 (dirty, written back)  [THREAD SWITCH]
+t=0121  P2 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P2 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0122  P2 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0123  P2 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0124  P2 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0125  P2 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0126  P2 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0127  P2 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0128  P2 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 1 (dirty, written back)  [THREAD SWITCH]
+t=0129  P2 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0130  P2 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0131  P2 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0132  P2 T1  R 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0133  P2 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0134  P2 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0135  P2 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0136  P2 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0137  P2 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 12 (clean)  [THREAD SWITCH]
+t=0138  P2 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0139  P2 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0140  P2 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0141  P2 T2  W 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0142  P2 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0143  P2 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0144  P2 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 6 (clean)  [THREAD SWITCH]
+t=0145  P2 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 3 (dirty, written back)  [THREAD SWITCH]
+t=0146  P2 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0147  P2 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0148  P2 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0149  P2 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0150  P2 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0151  P2 T2  W 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0152  P2 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 7 (clean)  [THREAD SWITCH]
+t=0153  P2 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 4 (dirty, written back)  [THREAD SWITCH]
+t=0154  P2 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0155  P2 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0156  P2 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0157  P2 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0158  P2 T1  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0159  P2 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0160  P3 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 5 (dirty, written back)  [CONTEXT SWITCH]
+t=0161  P3 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 14 (clean)  [THREAD SWITCH]
+t=0162  P3 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0163  P3 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0164  P3 T1  R 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0165  P3 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0166  P3 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0167  P3 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0168  P3 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 15 (dirty, written back)  [THREAD SWITCH]
+t=0169  P3 T2  W 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P2 page 13 (dirty, written back)  [THREAD SWITCH]
+t=0170  P3 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0171  P3 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0172  P3 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0173  P3 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0174  P3 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0175  P3 T2  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0176  P3 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 0 (clean)  [THREAD SWITCH]
+t=0177  P3 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 16 (dirty, written back)  [THREAD SWITCH]
+t=0178  P3 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0179  P3 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0180  P3 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0181  P3 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0182  P3 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0183  P3 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0184  P3 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 9 (clean)  [THREAD SWITCH]
+t=0185  P3 T2  W 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 9 (dirty, written back)  [THREAD SWITCH]
+t=0186  P3 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0187  P3 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0188  P3 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0189  P3 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0190  P3 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0191  P3 T2  R 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0192  P3 T1  W 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0193  P3 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0194  P3 T1  R 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0195  P3 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0196  P3 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0197  P3 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0198  P3 T1  R 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0199  P3 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0200  P3 T1  R 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 3 (clean)  [THREAD SWITCH]
+t=0201  P3 T2  R 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 17 (dirty, written back)  [THREAD SWITCH]
+t=0202  P3 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0203  P3 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0204  P3 T1  W 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0205  P3 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0206  P3 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0207  P3 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0208  P3 T1  W 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 12 (clean)  [THREAD SWITCH]
+t=0209  P3 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0210  P3 T1  W 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0211  P3 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0212  P3 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0213  P3 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0214  P3 T1  W 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0215  P3 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0216  P3 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 13 (clean)  [THREAD SWITCH]
+t=0217  P3 T2  W 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 1 (dirty, written back)  [THREAD SWITCH]
+t=0218  P3 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0219  P3 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0220  P3 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0221  P3 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0222  P3 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0223  P3 T2  W 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0224  P3 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 14 (clean)  [THREAD SWITCH]
+t=0225  P3 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 2 (dirty, written back)  [THREAD SWITCH]
+t=0226  P3 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0227  P3 T2  W 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0228  P3 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0229  P3 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0230  P3 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0231  P3 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=7  [THREAD SWITCH]
+t=0232  P3 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 15 (dirty, written back)  [THREAD SWITCH]
+t=0233  P3 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 7 (clean)  [THREAD SWITCH]
+t=0234  P3 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0235  P3 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0236  P3 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0237  P3 T2  R 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0238  P3 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0239  P3 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=4  [THREAD SWITCH]
+
+===== FCFS summary =====
+CPU: cycles=240 context switches=2 thread switches=237 modeled memory cycles=97840
+TLB (size 4): hits=180 misses=60 evictions=43 hit rate=75.00%
+Page table: faults=60 loads=60 evictions=52 resident pages=8 live 2nd-level tables=2 (4 outer bits / 4 inner bits)
+Clock (8 frames): clean evictions=15 dirty evictions (write-backs)=37 hand moves=449
+Page fault rate=25.00%  effective access time=407.67 cycles/ref
+Per-process: P1(start 0, finish 80) P2(start 80, finish 160) P3(start 160, finish 240) 
+Avg turnaround=160.00  avg response=80.00  thread fairness (Jain)=0.856
+
+Timeline (FCFS)  # hit  m TLB miss  F fault  W fault+write-back  | C context switch  t thread switch
+tick 0-99
+P1T1 |F.#.#.#.F.#.#.#.F.#.#.#.F.#.#.#.F.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.....................|
+P1T2 |.F.#.#.#.F.#.#.#.F.#.#.#.F.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#....................|
+P2T1 |................................................................................W.#.#.#.W.#.#.#.F.#.|
+P2T2 |.................................................................................W.#.#.#.W.#.#.#.F.#|
+P3T1 |....................................................................................................|
+P3T2 |....................................................................................................|
+sw   | tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttCttttttttttttttttttt|
+tick 100-199
+P1T1 |....................................................................................................|
+P1T2 |....................................................................................................|
+P2T1 |#.#.W.#.#.#.F.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.F.#.#.#.F.#.#.#.........................................|
+P2T2 |.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.F.#.#.#.W.#.#.#.W.#.#.#........................................|
+P3T1 |............................................................W.#.#.#.W.#.#.#.F.#.#.#.F.#.#.#.W.#.#.#.|
+P3T2 |.............................................................F.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#|
+sw   |ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttCttttttttttttttttttttttttttttttttttttttt|
+tick 200-239
+P1T1 |........................................|
+P1T2 |........................................|
+P2T1 |........................................|
+P2T2 |........................................|
+P3T1 |F.#.#.#.F.#.#.#.F.#.#.#.F.#.#.#.W.#.#.#.|
+P3T2 |.W.#.#.#.W.#.#.#.W.#.#.#.W.#.#.#.F.#.#.#|
+sw   |tttttttttttttttttttttttttttttttttttttttt|
+
+==================== RR | input/sequential.txt | TLB 4 | frames 8 ====================
+t=0000  P1 T1  W 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0
+t=0001  P1 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0002  P1 T2  W 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 1  [THREAD SWITCH]
+t=0003  P1 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=1
+t=0004  P2 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 2  [CONTEXT SWITCH]
+t=0005  P2 T1  W 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0006  P2 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 3  [THREAD SWITCH]
+t=0007  P2 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0008  P3 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 4  [CONTEXT SWITCH]
+t=0009  P3 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=4
+t=0010  P3 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 5  [THREAD SWITCH]
+t=0011  P3 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=5
+t=0012  P1 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB MISS -> page table hit, frame=0  [CONTEXT SWITCH]
+t=0013  P1 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0014  P1 T2  R 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=1  [THREAD SWITCH]
+t=0015  P1 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=1
+t=0016  P2 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB MISS -> page table hit, frame=2  [CONTEXT SWITCH]
+t=0017  P2 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0018  P2 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0019  P2 T2  W 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0020  P3 T1  R 0x0080  page=  0 (outer 0, inner 0)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0021  P3 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=4
+t=0022  P3 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=5  [THREAD SWITCH]
+t=0023  P3 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=5
+t=0024  P1 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 6  [CONTEXT SWITCH]
+t=0025  P1 T1  R 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=6
+t=0026  P1 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 7  [THREAD SWITCH]
+t=0027  P1 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0028  P2 T1  W 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 0 (clean)  [CONTEXT SWITCH]
+t=0029  P2 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=4
+t=0030  P2 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 1 (clean)  [THREAD SWITCH]
+t=0031  P2 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0032  P3 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 9 (clean)  [CONTEXT SWITCH]
+t=0033  P3 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=7
+t=0034  P3 T2  W 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 0 (dirty, written back)  [THREAD SWITCH]
+t=0035  P3 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=0
+t=0036  P1 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 8 (dirty, written back)  [CONTEXT SWITCH]
+t=0037  P1 T1  W 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=1
+t=0038  P1 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 0 (dirty, written back)  [THREAD SWITCH]
+t=0039  P1 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0040  P2 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0041  P2 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=4
+t=0042  P2 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=6  [THREAD SWITCH]
+t=0043  P2 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0044  P3 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0045  P3 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=7
+t=0046  P3 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0047  P3 T2  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=0
+t=0048  P1 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 8 (dirty, written back)  [CONTEXT SWITCH]
+t=0049  P1 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=3
+t=0050  P1 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0051  P1 T2  W 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=5
+t=0052  P2 T1  R 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 1 (dirty, written back)  [CONTEXT SWITCH]
+t=0053  P2 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0054  P2 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 9 (clean)  [THREAD SWITCH]
+t=0055  P2 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0056  P3 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 9 (clean)  [CONTEXT SWITCH]
+t=0057  P3 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0058  P3 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 2 (dirty, written back)  [THREAD SWITCH]
+t=0059  P3 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=3
+t=0060  P1 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 1 (dirty, written back)  [CONTEXT SWITCH]
+t=0061  P1 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=7
+t=0062  P1 T2  R 0x0A80  page= 10 (outer 0, inner 10)  TLB MISS -> page table hit, frame=5  [THREAD SWITCH]
+t=0063  P1 T2  R 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=5
+t=0064  P2 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0065  P2 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0066  P2 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB MISS -> page table hit, frame=6  [THREAD SWITCH]
+t=0067  P2 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0068  P3 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB MISS -> page table hit, frame=2  [CONTEXT SWITCH]
+t=0069  P3 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0070  P3 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0071  P3 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=3
+t=0072  P1 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 9 (dirty, written back)  [CONTEXT SWITCH]
+t=0073  P1 T1  W 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=0
+t=0074  P1 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 1 (dirty, written back)  [THREAD SWITCH]
+t=0075  P1 T2  W 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0076  P2 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 2 (clean)  [CONTEXT SWITCH]
+t=0077  P2 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=4
+t=0078  P2 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 2 (clean)  [THREAD SWITCH]
+t=0079  P2 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=7
+t=0080  P3 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 3 (dirty, written back)  [CONTEXT SWITCH]
+t=0081  P3 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=0
+t=0082  P3 T2  W 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0083  P3 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0084  P1 T1  W 0x0380  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 2 (dirty, written back)  [CONTEXT SWITCH]
+t=0085  P1 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=2
+t=0086  P1 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0087  P1 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=3
+t=0088  P2 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0089  P2 T1  W 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=4
+t=0090  P2 T2  W 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> page table hit, frame=7  [THREAD SWITCH]
+t=0091  P2 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=7
+t=0092  P3 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB MISS -> page table hit, frame=0  [CONTEXT SWITCH]
+t=0093  P3 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=0
+t=0094  P3 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> page table hit, frame=1  [THREAD SWITCH]
+t=0095  P3 T2  R 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0096  P1 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 10 (dirty, written back)  [CONTEXT SWITCH]
+t=0097  P1 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=5
+t=0098  P1 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0099  P1 T2  W 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0100  P2 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 3 (dirty, written back)  [CONTEXT SWITCH]
+t=0101  P2 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0102  P2 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 3 (clean)  [THREAD SWITCH]
+t=0103  P2 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0104  P3 T1  W 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P3 page 11 (dirty, written back)  [CONTEXT SWITCH]
+t=0105  P3 T1  R 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0106  P3 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 3 (dirty, written back)  [THREAD SWITCH]
+t=0107  P3 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=2
+t=0108  P1 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB MISS -> page table hit, frame=5  [CONTEXT SWITCH]
+t=0109  P1 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=5
+t=0110  P1 T2  W 0x0C80  page= 12 (outer 0, inner 12)  TLB MISS -> page table hit, frame=6  [THREAD SWITCH]
+t=0111  P1 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0112  P2 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0113  P2 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0114  P2 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0115  P2 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0116  P3 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB MISS -> page table hit, frame=1  [CONTEXT SWITCH]
+t=0117  P3 T1  R 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0118  P3 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB MISS -> page table hit, frame=2  [THREAD SWITCH]
+t=0119  P3 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=2
+t=0120  P1 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 11 (dirty, written back)  [CONTEXT SWITCH]
+t=0121  P1 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=3
+t=0122  P1 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0123  P1 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0124  P2 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 4 (dirty, written back)  [CONTEXT SWITCH]
+t=0125  P2 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=4
+t=0126  P2 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P2 page 12 (clean)  [THREAD SWITCH]
+t=0127  P2 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=0
+t=0128  P3 T1  R 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 12 (clean)  [CONTEXT SWITCH]
+t=0129  P3 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=2
+t=0130  P3 T2  R 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 5 (dirty, written back)  [THREAD SWITCH]
+t=0131  P3 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=3
+t=0132  P1 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 4 (dirty, written back)  [CONTEXT SWITCH]
+t=0133  P1 T1  W 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0134  P1 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB MISS -> page table hit, frame=7  [THREAD SWITCH]
+t=0135  P1 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0136  P2 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0137  P2 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=4
+t=0138  P2 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0139  P2 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=0
+t=0140  P3 T1  W 0x0580  page=  5 (outer 0, inner 5)  TLB MISS -> page table hit, frame=2  [CONTEXT SWITCH]
+t=0141  P3 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=2
+t=0142  P3 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0143  P3 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=3
+t=0144  P1 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 12 (dirty, written back)  [CONTEXT SWITCH]
+t=0145  P1 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0146  P1 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P3 page 4 (dirty, written back)  [THREAD SWITCH]
+t=0147  P1 T2  W 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0148  P2 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 13 (dirty, written back)  [CONTEXT SWITCH]
+t=0149  P2 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=7
+t=0150  P2 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 13 (clean)  [THREAD SWITCH]
+t=0151  P2 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=3
+t=0152  P3 T1  W 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 6 (clean)  [CONTEXT SWITCH]
+t=0153  P3 T1  W 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0154  P3 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P2 page 13 (dirty, written back)  [THREAD SWITCH]
+t=0155  P3 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=0
+t=0156  P1 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 6 (clean)  [CONTEXT SWITCH]
+t=0157  P1 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=7
+t=0158  P1 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB MISS -> page table hit, frame=1  [THREAD SWITCH]
+t=0159  P1 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0160  P2 T1  R 0x0680  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 5 (dirty, written back)  [CONTEXT SWITCH]
+t=0161  P2 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=2
+t=0162  P2 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0163  P2 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=3
+t=0164  P3 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB MISS -> page table hit, frame=6  [CONTEXT SWITCH]
+t=0165  P3 T1  W 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0166  P3 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0167  P3 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=0
+t=0168  P1 T1  W 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 5 (dirty, written back)  [CONTEXT SWITCH]
+t=0169  P1 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0170  P1 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 14 (clean)  [THREAD SWITCH]
+t=0171  P1 T2  W 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0172  P2 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 5 (dirty, written back)  [CONTEXT SWITCH]
+t=0173  P2 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=5
+t=0174  P2 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 14 (dirty, written back)  [THREAD SWITCH]
+t=0175  P2 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=1
+t=0176  P3 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 14 (clean)  [CONTEXT SWITCH]
+t=0177  P3 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=0
+t=0178  P3 T2  W 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 7 (dirty, written back)  [THREAD SWITCH]
+t=0179  P3 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=4
+t=0180  P1 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 15 (clean)  [CONTEXT SWITCH]
+t=0181  P1 T1  W 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=1
+t=0182  P1 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0183  P1 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0184  P2 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB MISS -> page table hit, frame=5  [CONTEXT SWITCH]
+t=0185  P2 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=5
+t=0186  P2 T2  W 0x0F80  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 6 (clean)  [THREAD SWITCH]
+t=0187  P2 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=2
+t=0188  P3 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB MISS -> page table hit, frame=0  [CONTEXT SWITCH]
+t=0189  P3 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=0
+t=0190  P3 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB MISS -> page table hit, frame=4  [THREAD SWITCH]
+t=0191  P3 T2  W 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=4
+t=0192  P1 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 6 (dirty, written back)  [CONTEXT SWITCH]
+t=0193  P1 T1  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0194  P1 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 7 (clean)  [THREAD SWITCH]
+t=0195  P1 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=5
+t=0196  P2 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 6 (dirty, written back)  [CONTEXT SWITCH]
+t=0197  P2 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=7
+t=0198  P2 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 8 (clean)  [THREAD SWITCH]
+t=0199  P2 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=6
+t=0200  P3 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 15 (dirty, written back)  [CONTEXT SWITCH]
+t=0201  P3 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0202  P3 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 7 (clean)  [THREAD SWITCH]
+t=0203  P3 T2  W 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0204  P1 T1  W 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 7 (dirty, written back)  [CONTEXT SWITCH]
+t=0205  P1 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=1
+t=0206  P1 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB MISS -> page table hit, frame=5  [THREAD SWITCH]
+t=0207  P1 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=5
+t=0208  P2 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0209  P2 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=7
+t=0210  P2 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB MISS -> page table hit, frame=6  [THREAD SWITCH]
+t=0211  P2 T2  W 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=6
+t=0212  P3 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=3  [CONTEXT SWITCH]
+t=0213  P3 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0214  P3 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0215  P3 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0216  P1 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 15 (dirty, written back)  [CONTEXT SWITCH]
+t=0217  P1 T1  W 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0218  P1 T2  W 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 15 (dirty, written back)  [THREAD SWITCH]
+t=0219  P1 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=4
+t=0220  P2 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 8 (dirty, written back)  [CONTEXT SWITCH]
+t=0221  P2 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0222  P2 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 16 (clean)  [THREAD SWITCH]
+t=0223  P2 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=5
+t=0224  P3 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 16 (dirty, written back)  [CONTEXT SWITCH]
+t=0225  P3 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0226  P3 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0227  P3 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=7
+t=0228  P1 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=2  [CONTEXT SWITCH]
+t=0229  P1 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0230  P1 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB MISS -> page table hit, frame=4  [THREAD SWITCH]
+t=0231  P1 T2  R 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=4
+t=0232  P2 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=3  [CONTEXT SWITCH]
+t=0233  P2 T1  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0234  P2 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB MISS -> page table hit, frame=5  [THREAD SWITCH]
+t=0235  P2 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=5
+t=0236  P3 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=6  [CONTEXT SWITCH]
+t=0237  P3 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0238  P3 T2  R 0x1180  page= 17 (outer 1, inner 1)  TLB MISS -> page table hit, frame=7  [THREAD SWITCH]
+t=0239  P3 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=7
+
+===== RR summary =====
+CPU: cycles=240 context switches=59 thread switches=60 modeled memory cycles=114440
+TLB (size 4): hits=120 misses=120 evictions=104 hit rate=50.00%
+Page table: faults=71 loads=71 evictions=63 resident pages=8 live 2nd-level tables=6 (4 outer bits / 4 inner bits)
+Clock (8 frames): clean evictions=21 dirty evictions (write-backs)=42 hand moves=489
+Page fault rate=29.58%  effective access time=476.83 cycles/ref
+Per-process: P1(start 0, finish 232) P2(start 4, finish 236) P3(start 8, finish 240) 
+Avg turnaround=236.00  avg response=4.00  thread fairness (Jain)=1.000
+
+Timeline (RR)  # hit  m TLB miss  F fault  W fault+write-back  | C context switch  t thread switch
+tick 0-99
+P1T1 |F#..........m#..........F#..........W#..........W#..........W#..........W#..........W#..........W#..|
+P1T2 |..F#..........m#..........F#..........W#..........W#..........m#..........W#..........W#..........W#|
+P2T1 |....F#..........m#..........F#..........m#..........W#..........m#..........F#..........m#..........|
+P2T2 |......F#..........m#..........F#..........m#..........F#..........m#..........F#..........m#........|
+P3T1 |........F#..........m#..........F#..........m#..........F#..........m#..........W#..........m#......|
+P3T2 |..........F#..........m#..........W#..........m#..........W#..........m#..........W#..........m#....|
+sw   |  t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t |
+tick 100-199
+P1T1 |........m#..........W#..........W#..........W#..........F#..........W#..........F#..........W#......|
+P1T2 |..........m#..........W#..........m#..........W#..........m#..........F#..........m#..........F#....|
+P2T1 |W#..........m#..........W#..........m#..........W#..........W#..........W#..........m#..........W#..|
+P2T2 |..F#..........m#..........F#..........m#..........F#..........m#..........W#..........F#..........F#|
+P3T1 |....W#..........m#..........F#..........m#..........F#..........m#..........F#..........m#..........|
+P3T2 |......W#..........m#..........W#..........m#..........W#..........m#..........W#..........m#........|
+sw   |C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t C t |
+tick 200-239
+P1T1 |....W#..........W#..........m#..........|
+P1T2 |......m#..........W#..........m#........|
+P2T1 |........m#..........W#..........m#......|
+P2T2 |..........m#..........F#..........m#....|
+P3T1 |W#..........m#..........W#..........m#..|
+P3T2 |..F#..........m#..........W#..........m#|
+sw   |C t C t C t C t C t C t C t C t C t C t |
+
+==================== Priority | input/sequential.txt | TLB 4 | frames 8 ====================
+t=0000  P3 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0
+t=0001  P3 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0002  P3 T1  R 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0003  P3 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0004  P3 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 1
+t=0005  P3 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=1
+t=0006  P3 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=1
+t=0007  P3 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=1
+t=0008  P3 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 2
+t=0009  P3 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0010  P3 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0011  P3 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0012  P3 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 3
+t=0013  P3 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=3
+t=0014  P3 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=3
+t=0015  P3 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=3
+t=0016  P3 T1  W 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 4
+t=0017  P3 T1  R 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0018  P3 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0019  P3 T1  R 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0020  P3 T1  R 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 5
+t=0021  P3 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0022  P3 T1  W 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0023  P3 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0024  P3 T1  W 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 6
+t=0025  P3 T1  W 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0026  P3 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0027  P3 T1  W 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0028  P3 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 7
+t=0029  P3 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0030  P3 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0031  P3 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0032  P3 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 0 (clean)
+t=0033  P3 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0034  P3 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0035  P3 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0036  P3 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 3 (clean)
+t=0037  P3 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0038  P3 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0039  P3 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0040  P3 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0041  P3 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0042  P3 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0043  P3 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0044  P3 T2  W 0x0900  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0045  P3 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0046  P3 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0047  P3 T2  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=3
+t=0048  P3 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 7 (clean)
+t=0049  P3 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=7
+t=0050  P3 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=7
+t=0051  P3 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=7
+t=0052  P3 T2  W 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P3 page 1 (dirty, written back)
+t=0053  P3 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0054  P3 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0055  P3 T2  R 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0056  P3 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 2 (dirty, written back)
+t=0057  P3 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=2
+t=0058  P3 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=2
+t=0059  P3 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=2
+t=0060  P3 T2  R 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 4 (dirty, written back)
+t=0061  P3 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=4
+t=0062  P3 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=4
+t=0063  P3 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=4
+t=0064  P3 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 5 (dirty, written back)
+t=0065  P3 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=5
+t=0066  P3 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=5
+t=0067  P3 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=5
+t=0068  P3 T2  W 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 6 (dirty, written back)
+t=0069  P3 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=6
+t=0070  P3 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=6
+t=0071  P3 T2  W 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=6
+t=0072  P3 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 8 (dirty, written back)
+t=0073  P3 T2  W 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0074  P3 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0075  P3 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0076  P3 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 9 (dirty, written back)
+t=0077  P3 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=3
+t=0078  P3 T2  R 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=3
+t=0079  P3 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=3
+t=0080  P1 T1  W 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 12 (clean)  [CONTEXT SWITCH]
+t=0081  P1 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0082  P1 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0083  P1 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0084  P1 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 10 (dirty, written back)
+t=0085  P1 T1  R 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=7
+t=0086  P1 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=7
+t=0087  P1 T1  W 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=7
+t=0088  P1 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 13 (clean)
+t=0089  P1 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0090  P1 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0091  P1 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0092  P1 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 14 (clean)
+t=0093  P1 T1  W 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=5
+t=0094  P1 T1  W 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=5
+t=0095  P1 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=5
+t=0096  P1 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 15 (dirty, written back)
+t=0097  P1 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=6
+t=0098  P1 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=6
+t=0099  P1 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=6
+t=0100  P1 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P3 page 11 (dirty, written back)
+t=0101  P1 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=1
+t=0102  P1 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=1
+t=0103  P1 T1  W 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=1
+t=0104  P1 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 17 (dirty, written back)
+t=0105  P1 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=3
+t=0106  P1 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=3
+t=0107  P1 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=3
+t=0108  P1 T1  W 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 1 (dirty, written back)
+t=0109  P1 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0110  P1 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0111  P1 T1  W 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=7
+t=0112  P1 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 16 (dirty, written back)
+t=0113  P1 T1  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0114  P1 T1  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0115  P1 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0116  P1 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 0 (dirty, written back)
+t=0117  P1 T1  W 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0118  P1 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0119  P1 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0120  P1 T2  W 0x0800  page=  8 (outer 0, inner 8)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0121  P1 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0122  P1 T2  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0123  P1 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=0
+t=0124  P1 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0125  P1 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0126  P1 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0127  P1 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=2
+t=0128  P1 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 2 (dirty, written back)
+t=0129  P1 T2  W 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=4
+t=0130  P1 T2  R 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=4
+t=0131  P1 T2  R 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=4
+t=0132  P1 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 3 (dirty, written back)
+t=0133  P1 T2  W 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=5
+t=0134  P1 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=5
+t=0135  P1 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=5
+t=0136  P1 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 4 (dirty, written back)
+t=0137  P1 T2  W 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0138  P1 T2  W 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0139  P1 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0140  P1 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 5 (dirty, written back)
+t=0141  P1 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=1
+t=0142  P1 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=1
+t=0143  P1 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=1
+t=0144  P1 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 6 (dirty, written back)
+t=0145  P1 T2  W 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=3
+t=0146  P1 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=3
+t=0147  P1 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=3
+t=0148  P1 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 7 (dirty, written back)
+t=0149  P1 T2  W 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=7
+t=0150  P1 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=7
+t=0151  P1 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=7
+t=0152  P1 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 8 (dirty, written back)
+t=0153  P1 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0154  P1 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0155  P1 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0156  P1 T2  W 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 9 (dirty, written back)
+t=0157  P1 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=2
+t=0158  P1 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=2
+t=0159  P1 T2  R 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=2
+t=0160  P2 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 10 (dirty, written back)  [CONTEXT SWITCH]
+t=0161  P2 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=4
+t=0162  P2 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=4
+t=0163  P2 T2  W 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=4
+t=0164  P2 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 11 (dirty, written back)
+t=0165  P2 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=5
+t=0166  P2 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=5
+t=0167  P2 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=5
+t=0168  P2 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 12 (dirty, written back)
+t=0169  P2 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0170  P2 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0171  P2 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0172  P2 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 13 (dirty, written back)
+t=0173  P2 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0174  P2 T2  W 0x0B80  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0175  P2 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=1
+t=0176  P2 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 16 (clean)
+t=0177  P2 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0178  P2 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0179  P2 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0180  P2 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 14 (dirty, written back)
+t=0181  P2 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=3
+t=0182  P2 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=3
+t=0183  P2 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=3
+t=0184  P2 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 15 (dirty, written back)
+t=0185  P2 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=7
+t=0186  P2 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=7
+t=0187  P2 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=7
+t=0188  P2 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 9 (clean)
+t=0189  P2 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0190  P2 T2  W 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0191  P2 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0192  P2 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 10 (dirty, written back)
+t=0193  P2 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=6
+t=0194  P2 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=6
+t=0195  P2 T2  W 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=6
+t=0196  P2 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 11 (dirty, written back)
+t=0197  P2 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=1
+t=0198  P2 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=1
+t=0199  P2 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=1
+t=0200  P2 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 14 (clean)  [THREAD SWITCH]
+t=0201  P2 T1  W 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=7
+t=0202  P2 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=7
+t=0203  P2 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=7
+t=0204  P2 T1  W 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P2 page 12 (clean)
+t=0205  P2 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=0
+t=0206  P2 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=0
+t=0207  P2 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=0
+t=0208  P2 T1  R 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 17 (dirty, written back)
+t=0209  P2 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0210  P2 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0211  P2 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=2
+t=0212  P2 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 8 (dirty, written back)
+t=0213  P2 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=4
+t=0214  P2 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=4
+t=0215  P2 T1  W 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=4
+t=0216  P2 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 17 (dirty, written back)
+t=0217  P2 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0218  P2 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0219  P2 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0220  P2 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 13 (dirty, written back)
+t=0221  P2 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=3
+t=0222  P2 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=3
+t=0223  P2 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=3
+t=0224  P2 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 2 (clean)
+t=0225  P2 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=2
+t=0226  P2 T1  R 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=2
+t=0227  P2 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=2
+t=0228  P2 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 15 (dirty, written back)
+t=0229  P2 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=5
+t=0230  P2 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=5
+t=0231  P2 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=5
+t=0232  P2 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 16 (dirty, written back)
+t=0233  P2 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0234  P2 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0235  P2 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0236  P2 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 0 (dirty, written back)
+t=0237  P2 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0238  P2 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0239  P2 T1  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+
+===== Priority summary =====
+CPU: cycles=240 context switches=2 thread switches=3 modeled memory cycles=93800
+TLB (size 4): hits=184 misses=56 evictions=49 hit rate=76.67%
+Page table: faults=56 loads=56 evictions=48 resident pages=8 live 2nd-level tables=1 (4 outer bits / 4 inner bits)
+Clock (8 frames): clean evictions=11 dirty evictions (write-backs)=37 hand moves=392
+Page fault rate=23.33%  effective access time=390.83 cycles/ref
+Per-process: P1(start 80, finish 160) P2(start 160, finish 240) P3(start 0, finish 80) 
+Avg turnaround=160.00  avg response=80.00  thread fairness (Jain)=0.808
+
+Timeline (Priority)  # hit  m TLB miss  F fault  W fault+write-back  | C context switch  t thread switch
+tick 0-99
+P1T1 |................................................................................F###W###F###F###W###|
+P1T2 |....................................................................................................|
+P2T1 |....................................................................................................|
+P2T2 |....................................................................................................|
+P3T1 |F###F###F###F###F###F###F###F###F###F###............................................................|
+P3T2 |........................................########F###W###W###W###W###W###W###W###....................|
+sw   |                                        t                                       C                   |
+tick 100-199
+P1T1 |W###W###W###W###W###................................................................................|
+P1T2 |....................########W###W###W###W###W###W###W###W###........................................|
+P2T1 |....................................................................................................|
+P2T2 |............................................................W###W###W###W###F###W###W###F###W###W###|
+P3T1 |....................................................................................................|
+P3T2 |....................................................................................................|
+sw   |                    t                                       C                                       |
+tick 200-239
+P1T1 |........................................|
+P1T2 |........................................|
+P2T1 |F###F###W###W###W###W###F###W###W###W###|
+P2T2 |........................................|
+P3T1 |........................................|
+P3T2 |........................................|
+sw   |t                                       |
+
+==================== MLFQ | input/sequential.txt | TLB 4 | frames 8 ====================
+t=0000  P1 T1  W 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0
+t=0001  P1 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0002  P2 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 1  [CONTEXT SWITCH]
+t=0003  P2 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=1
+t=0004  P3 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 2  [CONTEXT SWITCH]
+t=0005  P3 T1  R 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=2
+t=0006  P1 T2  W 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 3  [CONTEXT SWITCH]
+t=0007  P1 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0008  P1 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0009  P1 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=0
+t=0010  P2 T1  R 0x0000  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 4  [CONTEXT SWITCH]
+t=0011  P2 T1  W 0x0040  page=  0 (outer 0, inner 0)  TLB HIT  frame=4
+t=0012  P2 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=1  [THREAD SWITCH]
+t=0013  P2 T2  W 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=1
+t=0014  P3 T2  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 5  [CONTEXT SWITCH]
+t=0015  P3 T2  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=5
+t=0016  P3 T2  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=5
+t=0017  P3 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=5
+t=0018  P1 T2  R 0x0880  page=  8 (outer 0, inner 8)  TLB MISS -> page table hit, frame=3  [CONTEXT SWITCH]
+t=0019  P1 T2  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0020  P1 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 6
+t=0021  P1 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0022  P1 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0023  P1 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=6
+t=0024  P1 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 7
+t=0025  P1 T2  W 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=7
+t=0026  P2 T1  W 0x0080  page=  0 (outer 0, inner 0)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0027  P2 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=4
+t=0028  P2 T1  W 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 0 (clean)
+t=0029  P2 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=2
+t=0030  P3 T1  R 0x0080  page=  0 (outer 0, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 9 (clean)  [CONTEXT SWITCH]
+t=0031  P3 T1  R 0x00C0  page=  0 (outer 0, inner 0)  TLB HIT  frame=6
+t=0032  P3 T2  W 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0033  P3 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0034  P1 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 0 (dirty, written back)  [CONTEXT SWITCH]
+t=0035  P1 T1  R 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=0
+t=0036  P1 T2  R 0x0A80  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0037  P1 T2  R 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=1
+t=0038  P1 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=0  [THREAD SWITCH]
+t=0039  P1 T1  W 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=0
+t=0040  P1 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 8 (dirty, written back)  [THREAD SWITCH]
+t=0041  P1 T2  W 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=3
+t=0042  P2 T2  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 0 (dirty, written back)  [CONTEXT SWITCH]
+t=0043  P2 T2  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=4
+t=0044  P2 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB MISS -> page table hit, frame=2  [THREAD SWITCH]
+t=0045  P2 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=2
+t=0046  P3 T1  R 0x0100  page=  1 (outer 0, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 8 (dirty, written back)  [CONTEXT SWITCH]
+t=0047  P3 T1  W 0x0140  page=  1 (outer 0, inner 1)  TLB HIT  frame=5
+t=0048  P3 T1  R 0x0180  page=  1 (outer 0, inner 1)  TLB HIT  frame=5
+t=0049  P3 T1  R 0x01C0  page=  1 (outer 0, inner 1)  TLB HIT  frame=5
+t=0050  P1 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 0 (clean)  [CONTEXT SWITCH]
+t=0051  P1 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=6
+t=0052  P1 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB HIT  frame=6
+t=0053  P1 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=6
+t=0054  P1 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 10 (clean)
+t=0055  P1 T1  W 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=1
+t=0056  P1 T1  W 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=1
+t=0057  P1 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=1
+t=0058  P2 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0059  P2 T2  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=4
+t=0060  P2 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 1 (dirty, written back)
+t=0061  P2 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=2
+t=0062  P3 T2  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0063  P3 T2  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0064  P3 T1  W 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0065  P3 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=3
+t=0066  P1 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P3 page 1 (dirty, written back)  [CONTEXT SWITCH]
+t=0067  P1 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=5
+t=0068  P1 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 9 (clean)  [THREAD SWITCH]
+t=0069  P1 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0070  P1 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 1 (dirty, written back)  [THREAD SWITCH]
+t=0071  P1 T2  W 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0072  P1 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB HIT  frame=4  [THREAD SWITCH]
+t=0073  P1 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=4
+t=0074  P2 T1  R 0x0200  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 11 (dirty, written back)  [CONTEXT SWITCH]
+t=0075  P2 T1  R 0x0240  page=  2 (outer 0, inner 2)  TLB HIT  frame=5
+t=0076  P2 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB MISS -> page table hit, frame=2  [THREAD SWITCH]
+t=0077  P2 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=2
+t=0078  P3 T2  W 0x0A00  page= 10 (outer 0, inner 10)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 2 (dirty, written back)  [CONTEXT SWITCH]
+t=0079  P3 T2  R 0x0A40  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0080  P3 T2  W 0x0A80  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0081  P3 T2  W 0x0AC0  page= 10 (outer 0, inner 10)  TLB HIT  frame=6
+t=0082  P1 T2  W 0x0C80  page= 12 (outer 0, inner 12)  TLB MISS -> page table hit, frame=0  [CONTEXT SWITCH]
+t=0083  P1 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=0
+t=0084  P1 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 9 (dirty, written back)
+t=0085  P1 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0086  P1 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0087  P1 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0088  P1 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 3 (dirty, written back)
+t=0089  P1 T2  W 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0090  P2 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB MISS -> page table hit, frame=5  [CONTEXT SWITCH]
+t=0091  P2 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=5
+t=0092  P2 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P3 page 2 (dirty, written back)
+t=0093  P2 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=3
+t=0094  P3 T1  R 0x0280  page=  2 (outer 0, inner 2)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 4 (dirty, written back)  [CONTEXT SWITCH]
+t=0095  P3 T1  R 0x02C0  page=  2 (outer 0, inner 2)  TLB HIT  frame=4
+t=0096  P3 T2  W 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 12 (dirty, written back)  [THREAD SWITCH]
+t=0097  P3 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=0
+t=0098  P1 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 2 (clean)  [CONTEXT SWITCH]
+t=0099  P1 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0100  P1 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB MISS -> page table hit, frame=1  [THREAD SWITCH]
+t=0101  P1 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0102  P1 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0103  P1 T1  W 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=5
+t=0104  P1 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 10 (dirty, written back)  [THREAD SWITCH]
+t=0105  P1 T2  W 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=6
+t=0106  P2 T2  R 0x0B00  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 13 (dirty, written back)  [CONTEXT SWITCH]
+t=0107  P2 T2  R 0x0B40  page= 11 (outer 0, inner 11)  TLB HIT  frame=7
+t=0108  P2 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB MISS -> page table hit, frame=3  [THREAD SWITCH]
+t=0109  P2 T1  W 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=3
+t=0110  P3 T1  R 0x0300  page=  3 (outer 0, inner 3)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P2 page 10 (dirty, written back)  [CONTEXT SWITCH]
+t=0111  P3 T1  R 0x0340  page=  3 (outer 0, inner 3)  TLB HIT  frame=2
+t=0112  P3 T1  R 0x0380  page=  3 (outer 0, inner 3)  TLB HIT  frame=2
+t=0113  P3 T1  R 0x03C0  page=  3 (outer 0, inner 3)  TLB HIT  frame=2
+t=0114  P1 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 11 (dirty, written back)  [CONTEXT SWITCH]
+t=0115  P1 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0116  P1 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0117  P1 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0118  P1 T1  W 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P3 page 2 (clean)
+t=0119  P1 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0120  P1 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0121  P1 T1  W 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0122  P2 T2  W 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0123  P2 T2  W 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=7
+t=0124  P2 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P1 page 5 (dirty, written back)
+t=0125  P2 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=5
+t=0126  P3 T2  R 0x0B80  page= 11 (outer 0, inner 11)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P1 page 15 (dirty, written back)  [CONTEXT SWITCH]
+t=0127  P3 T2  R 0x0BC0  page= 11 (outer 0, inner 11)  TLB HIT  frame=6
+t=0128  P3 T1  W 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P1 page 14 (dirty, written back)  [THREAD SWITCH]
+t=0129  P3 T1  R 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0130  P1 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 3 (dirty, written back)  [CONTEXT SWITCH]
+t=0131  P1 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0132  P1 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 3 (clean)  [THREAD SWITCH]
+t=0133  P1 T1  R 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=2
+t=0134  P1 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 11 (dirty, written back)  [THREAD SWITCH]
+t=0135  P1 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=7
+t=0136  P1 T1  W 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0137  P1 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=2
+t=0138  P2 T1  R 0x0400  page=  4 (outer 0, inner 4)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P1 page 15 (clean)  [CONTEXT SWITCH]
+t=0139  P2 T1  W 0x0440  page=  4 (outer 0, inner 4)  TLB HIT  frame=3
+t=0140  P2 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB MISS -> page table hit, frame=5  [THREAD SWITCH]
+t=0141  P2 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=5
+t=0142  P3 T2  R 0x0C00  page= 12 (outer 0, inner 12)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 11 (clean)  [CONTEXT SWITCH]
+t=0143  P3 T2  R 0x0C40  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0144  P3 T2  R 0x0C80  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0145  P3 T2  R 0x0CC0  page= 12 (outer 0, inner 12)  TLB HIT  frame=6
+t=0146  P1 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0147  P1 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=7
+t=0148  P1 T2  W 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 6 (dirty, written back)
+t=0149  P1 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=0
+t=0150  P1 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=0
+t=0151  P1 T2  R 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=0
+t=0152  P1 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 16 (clean)  [THREAD SWITCH]
+t=0153  P1 T1  W 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0154  P2 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB MISS -> page table hit, frame=3  [CONTEXT SWITCH]
+t=0155  P2 T1  W 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=3
+t=0156  P2 T1  W 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P1 page 7 (dirty, written back)
+t=0157  P2 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=4
+t=0158  P3 T1  R 0x0480  page=  4 (outer 0, inner 4)  TLB MISS -> page table hit, frame=1  [CONTEXT SWITCH]
+t=0159  P3 T1  R 0x04C0  page=  4 (outer 0, inner 4)  TLB HIT  frame=1
+t=0160  P3 T2  R 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P1 page 17 (dirty, written back)  [THREAD SWITCH]
+t=0161  P3 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=0
+t=0162  P1 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=7  [CONTEXT SWITCH]
+t=0163  P1 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0164  P2 T2  W 0x0D00  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 12 (clean)  [CONTEXT SWITCH]
+t=0165  P2 T2  R 0x0D40  page= 13 (outer 0, inner 13)  TLB HIT  frame=5
+t=0166  P2 T1  R 0x0580  page=  5 (outer 0, inner 5)  TLB MISS -> page table hit, frame=4  [THREAD SWITCH]
+t=0167  P2 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=4
+t=0168  P2 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB HIT  frame=5  [THREAD SWITCH]
+t=0169  P2 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=5
+t=0170  P2 T1  R 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 12 (clean)  [THREAD SWITCH]
+t=0171  P2 T1  R 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=6
+t=0172  P3 T1  R 0x0500  page=  5 (outer 0, inner 5)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P1 page 8 (dirty, written back)  [CONTEXT SWITCH]
+t=0173  P3 T1  R 0x0540  page=  5 (outer 0, inner 5)  TLB HIT  frame=2
+t=0174  P3 T1  W 0x0580  page=  5 (outer 0, inner 5)  TLB HIT  frame=2
+t=0175  P3 T1  R 0x05C0  page=  5 (outer 0, inner 5)  TLB HIT  frame=2
+t=0176  P3 T1  W 0x0600  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 13 (clean)
+t=0177  P3 T1  W 0x0640  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0178  P3 T1  W 0x0680  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0179  P3 T1  W 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=0
+t=0180  P2 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P3 page 4 (dirty, written back)  [CONTEXT SWITCH]
+t=0181  P2 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0182  P2 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0183  P2 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=1
+t=0184  P2 T2  R 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 4 (dirty, written back)
+t=0185  P2 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0186  P2 T2  W 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0187  P2 T2  R 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=3
+t=0188  P3 T2  R 0x0D80  page= 13 (outer 0, inner 13)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P1 page 9 (dirty, written back)  [CONTEXT SWITCH]
+t=0189  P3 T2  R 0x0DC0  page= 13 (outer 0, inner 13)  TLB HIT  frame=7
+t=0190  P3 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P2 page 6 (clean)  [THREAD SWITCH]
+t=0191  P3 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=6
+t=0192  P3 T2  R 0x0E00  page= 14 (outer 0, inner 14)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 5 (dirty, written back)  [THREAD SWITCH]
+t=0193  P3 T2  R 0x0E40  page= 14 (outer 0, inner 14)  TLB HIT  frame=2
+t=0194  P3 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB HIT  frame=6  [THREAD SWITCH]
+t=0195  P3 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=6
+t=0196  P2 T1  R 0x0680  page=  6 (outer 0, inner 6)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P3 page 13 (clean)  [CONTEXT SWITCH]
+t=0197  P2 T1  R 0x06C0  page=  6 (outer 0, inner 6)  TLB HIT  frame=7
+t=0198  P2 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 14 (clean)  [THREAD SWITCH]
+t=0199  P2 T2  R 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=1
+t=0200  P2 T1  R 0x0700  page=  7 (outer 0, inner 7)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 5 (dirty, written back)  [THREAD SWITCH]
+t=0201  P2 T1  R 0x0740  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0202  P2 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0203  P2 T2  W 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=1
+t=0204  P3 T2  R 0x0E80  page= 14 (outer 0, inner 14)  TLB MISS -> page table hit, frame=2  [CONTEXT SWITCH]
+t=0205  P3 T2  R 0x0EC0  page= 14 (outer 0, inner 14)  TLB HIT  frame=2
+t=0206  P3 T2  W 0x0F00  page= 15 (outer 0, inner 15)  TLB MISS -> PAGE FAULT, loaded into frame 5, evicted P2 page 13 (dirty, written back)
+t=0207  P3 T2  R 0x0F40  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0208  P3 T2  R 0x0F80  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0209  P3 T2  W 0x0FC0  page= 15 (outer 0, inner 15)  TLB HIT  frame=5
+t=0210  P3 T2  R 0x1000  page= 16 (outer 1, inner 0)  TLB MISS -> PAGE FAULT, loaded into frame 0, evicted P3 page 6 (dirty, written back)
+t=0211  P3 T2  W 0x1040  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0212  P2 T1  R 0x0780  page=  7 (outer 0, inner 7)  TLB MISS -> page table hit, frame=4  [CONTEXT SWITCH]
+t=0213  P2 T1  R 0x07C0  page=  7 (outer 0, inner 7)  TLB HIT  frame=4
+t=0214  P2 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 6, evicted P3 page 7 (clean)
+t=0215  P2 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0216  P2 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0217  P2 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=6
+t=0218  P2 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 7, evicted P2 page 6 (clean)
+t=0219  P2 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0220  P3 T1  R 0x0800  page=  8 (outer 0, inner 8)  TLB MISS -> PAGE FAULT, loaded into frame 3, evicted P2 page 15 (dirty, written back)  [CONTEXT SWITCH]
+t=0221  P3 T1  W 0x0840  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0222  P3 T2  R 0x1080  page= 16 (outer 1, inner 0)  TLB MISS -> page table hit, frame=0  [THREAD SWITCH]
+t=0223  P3 T2  R 0x10C0  page= 16 (outer 1, inner 0)  TLB HIT  frame=0
+t=0224  P3 T1  R 0x0880  page=  8 (outer 0, inner 8)  TLB HIT  frame=3  [THREAD SWITCH]
+t=0225  P3 T1  R 0x08C0  page=  8 (outer 0, inner 8)  TLB HIT  frame=3
+t=0226  P3 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 2, evicted P3 page 14 (clean)  [THREAD SWITCH]
+t=0227  P3 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=2
+t=0228  P2 T2  R 0x1100  page= 17 (outer 1, inner 1)  TLB MISS -> PAGE FAULT, loaded into frame 1, evicted P2 page 16 (dirty, written back)  [CONTEXT SWITCH]
+t=0229  P2 T2  R 0x1140  page= 17 (outer 1, inner 1)  TLB HIT  frame=1
+t=0230  P2 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB MISS -> page table hit, frame=7  [THREAD SWITCH]
+t=0231  P2 T1  R 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=7
+t=0232  P2 T2  W 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=1  [THREAD SWITCH]
+t=0233  P2 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=1
+t=0234  P3 T1  R 0x0900  page=  9 (outer 0, inner 9)  TLB MISS -> PAGE FAULT, loaded into frame 4, evicted P2 page 7 (clean)  [CONTEXT SWITCH]
+t=0235  P3 T1  R 0x0940  page=  9 (outer 0, inner 9)  TLB HIT  frame=4
+t=0236  P3 T1  R 0x0980  page=  9 (outer 0, inner 9)  TLB HIT  frame=4
+t=0237  P3 T1  W 0x09C0  page=  9 (outer 0, inner 9)  TLB HIT  frame=4
+t=0238  P3 T2  R 0x1180  page= 17 (outer 1, inner 1)  TLB HIT  frame=2  [THREAD SWITCH]
+t=0239  P3 T2  W 0x11C0  page= 17 (outer 1, inner 1)  TLB HIT  frame=2
+
+===== MLFQ summary =====
+CPU: cycles=240 context switches=43 thread switches=39 modeled memory cycles=108140
+TLB (size 4): hits=150 misses=90 evictions=79 hit rate=62.50%
+Page table: faults=68 loads=68 evictions=60 resident pages=8 live 2nd-level tables=4 (4 outer bits / 4 inner bits)
+Clock (8 frames): clean evictions=21 dirty evictions (write-backs)=39 hand moves=473
+Page fault rate=28.33%  effective access time=450.58 cycles/ref
+MLFQ: demotions=24 aging promotions=18
+Per-process: P1(start 0, finish 164) P2(start 2, finish 234) P3(start 4, finish 240) 
+Avg turnaround=212.67  avg response=2.00  thread fairness (Jain)=0.970
+
+Timeline (MLFQ)  # hit  m TLB miss  F fault  W fault+write-back  | C context switch  t thread switch
+tick 0-99
+P1T1 |F#......##........................W#..##..........F###F###..........F#..##........................F#|
+P1T2 |......F#..........m#F###F#..........W#..W#........................W#..W#..........m#W###W#..........|
+P2T1 |..........F#..............m#F#..............m#............................W#..............m#W#......|
+P2T2 |..F#........m#............................W#..............m#W#..............m#......................|
+P3T1 |....F#........................F#..............W###..............W#............................W#....|
+P3T2 |..............F###..............W#............................m#..............W###..............W#..|
+sw   |  C C C t C t C   C       C   C t C t t t C t C   C       C   C t C t t t C t C   C       C   C t C |
+tick 100-199
+P1T1 |..##..........W###F###..........F#..##..............F#........m#....................................|
+P1T2 |m#..W#........................W#..W#..........m#W###................................................|
+P2T1 |........m#............................F#..............m#W#........m#..F#........................F#..|
+P2T2 |......W#..............m#W#..............m#......................F#..##..........W###W###..........F#|
+P3T1 |..........W###..............W#............................m#............W###F###..........F#..##....|
+P3T2 |..........................W#..............F###..............W#..........................W#..W#......|
+sw   |t t t C t C   C       C   C t C t t t C t C   C     t C   C t C C t t t C       C       C t t t C t |
+tick 200-239
+P1T1 |........................................|
+P1T2 |........................................|
+P2T1 |W#..........m#F###F#..........m#........|
+P2T2 |..##........................W#..##......|
+P3T1 |....................W#..##........F###..|
+P3T2 |....m#W###W#..........m#..F#..........##|
+sw   |t t C       C       C t t t C t t C   t |
+

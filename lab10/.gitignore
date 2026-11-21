@@ -1,0 +1,3 @@
+paging
+*.o
+__pycache__/

@@ -1,0 +1,74 @@
+== enhanced clock ==
+Trace input/trace.txt: 247 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=54 dirty evictions (write-backs)=43 hand moves=658
+===== RR summary =====
+Clock (8 frames): clean evictions=113 dirty evictions (write-backs)=60 hand moves=933
+===== Priority summary =====
+Clock (8 frames): clean evictions=46 dirty evictions (write-backs)=45 hand moves=616
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=95 dirty evictions (write-backs)=57 hand moves=842
+Trace input/sequential.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=15 dirty evictions (write-backs)=37 hand moves=449
+===== RR summary =====
+Clock (8 frames): clean evictions=21 dirty evictions (write-backs)=42 hand moves=489
+===== Priority summary =====
+Clock (8 frames): clean evictions=11 dirty evictions (write-backs)=37 hand moves=392
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=21 dirty evictions (write-backs)=39 hand moves=473
+Trace input/random.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=121 dirty evictions (write-backs)=61 hand moves=991
+===== RR summary =====
+Clock (8 frames): clean evictions=156 dirty evictions (write-backs)=66 hand moves=1050
+===== Priority summary =====
+Clock (8 frames): clean evictions=113 dirty evictions (write-backs)=59 hand moves=931
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=146 dirty evictions (write-backs)=65 hand moves=1009
+Trace input/localized.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=29 dirty evictions (write-backs)=18 hand moves=347
+===== RR summary =====
+Clock (8 frames): clean evictions=135 dirty evictions (write-backs)=47 hand moves=866
+===== Priority summary =====
+Clock (8 frames): clean evictions=15 dirty evictions (write-backs)=21 hand moves=280
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=100 dirty evictions (write-backs)=46 hand moves=723
+== plain clock ==
+Trace input/trace.txt: 247 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=51 dirty evictions (write-backs)=48 hand moves=122
+===== RR summary =====
+Clock (8 frames): clean evictions=124 dirty evictions (write-backs)=67 hand moves=200
+===== Priority summary =====
+Clock (8 frames): clean evictions=45 dirty evictions (write-backs)=46 hand moves=110
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=96 dirty evictions (write-backs)=60 hand moves=168
+Trace input/sequential.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=13 dirty evictions (write-backs)=39 hand moves=56
+===== RR summary =====
+Clock (8 frames): clean evictions=14 dirty evictions (write-backs)=38 hand moves=72
+===== Priority summary =====
+Clock (8 frames): clean evictions=10 dirty evictions (write-backs)=38 hand moves=48
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=18 dirty evictions (write-backs)=38 hand moves=73
+Trace input/random.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=115 dirty evictions (write-backs)=65 hand moves=209
+===== RR summary =====
+Clock (8 frames): clean evictions=157 dirty evictions (write-backs)=67 hand moves=232
+===== Priority summary =====
+Clock (8 frames): clean evictions=109 dirty evictions (write-backs)=63 hand moves=202
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=146 dirty evictions (write-backs)=66 hand moves=216
+Trace input/localized.txt: 240 references | TLB size 4 | frames 8 | page size 256 B | 4/4/8 address split
+===== FCFS summary =====
+Clock (8 frames): clean evictions=27 dirty evictions (write-backs)=24 hand moves=85
+===== RR summary =====
+Clock (8 frames): clean evictions=142 dirty evictions (write-backs)=55 hand moves=202
+===== Priority summary =====
+Clock (8 frames): clean evictions=12 dirty evictions (write-backs)=22 hand moves=42
+===== MLFQ summary =====
+Clock (8 frames): clean evictions=96 dirty evictions (write-backs)=46 hand moves=168
